@@ -17,7 +17,11 @@ namespace Owen.Site.Services
 
         public override void Configure(Funq.Container container)
         {
-            
+            /*
+            ServiceExceptionHandlers.Add((req, reqDto, exception) => {
+                return null;
+            });
+             */
         }
     }
 }

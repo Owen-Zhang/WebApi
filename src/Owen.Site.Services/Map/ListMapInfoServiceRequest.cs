@@ -4,7 +4,7 @@ using ServiceStack;
 namespace Owen.Site.Services.Map
 {
     [Route("/maplist", "GET")]
-    public class ListMapInfoServiceRequest : IReturn<MapInfo>
+    public class ListMapInfoServiceRequest /*: IReturn<MapInfo> 可以不用inherit*/
     {
 
     }
