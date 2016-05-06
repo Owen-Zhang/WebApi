@@ -9,7 +9,7 @@ namespace Owen.Site.Services.Map
     {
         public object Get(ListMapInfoServiceRequest req)
         {
-            LoggerManager.Instance.Info("aaaaaaaaa{0}", 1111111);
+            FileLog.Instance.InfoFormat("aaaaaaaaa{0}", "111111");
             return new List<MapInfo> { 
                 new MapInfo {
                      Address = "成都中和镇",

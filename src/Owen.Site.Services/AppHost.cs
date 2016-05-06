@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Owen.Site.Core.Log;
 using ServiceStack;
+using ServiceStack.Logging;
 
 namespace Owen.Site.Services
 {
@@ -11,8 +13,8 @@ namespace Owen.Site.Services
     {
         public AppHost()
             : base("Owen.Site.API", typeof(AppHost).Assembly)
-        { 
-            
+        {
+            LogManager.LogFactory = new FileLogFactory();
         }
 
         public override void Configure(Funq.Container container)
