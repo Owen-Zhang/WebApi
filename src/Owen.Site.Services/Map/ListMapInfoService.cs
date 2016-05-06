@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Owen.Site.Core.Log;
 using Owen.Site.Model;
 using ServiceStack;
 
@@ -8,6 +9,7 @@ namespace Owen.Site.Services.Map
     {
         public object Get(ListMapInfoServiceRequest req)
         {
+            LoggerManager.Instance.Info("aaaaaaaaa{0}", 1111111);
             return new List<MapInfo> { 
                 new MapInfo {
                      Address = "成都中和镇",

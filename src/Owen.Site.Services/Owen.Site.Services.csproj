@@ -62,6 +62,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Owen.Site.Core\Owen.Site.Core.csproj">
+      <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
+      <Name>Owen.Site.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Owen.Site.Model\Owen.Site.Model.csproj">
       <Project>{e8b94903-deb7-406d-9461-3993372d20e3}</Project>
       <Name>Owen.Site.Model</Name>
