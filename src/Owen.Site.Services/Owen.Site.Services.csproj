@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppHost.cs" />
+    <Compile Include="Common\BaseService.cs" />
     <Compile Include="Map\ListMapInfoService.cs" />
     <Compile Include="Map\ListMapInfoServiceRequest.cs">
       <DependentUpon>ListMapInfoService.cs</DependentUpon>
