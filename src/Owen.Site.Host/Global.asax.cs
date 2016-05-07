@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using Owen.Site.Core.Log;
 using ServiceStack.Logging;
 
 namespace Owen.Site.Host
@@ -12,6 +13,7 @@ namespace Owen.Site.Host
     {
         protected void Application_Start(object sender, EventArgs e)
         {
+            LogManager.LogFactory = new FileLogFactory();
             new Owen.Site.Services.AppHost().Init();
         }
 
@@ -22,7 +24,6 @@ namespace Owen.Site.Host
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            LogManager.GetLogger(typeof(Global)).Error("dadafdsasdasdf error");
         }
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
@@ -32,17 +33,14 @@ namespace Owen.Site.Host
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            //LogManager.GetLogger(typeof(Global)).Error("dadafdsasdasdf");
         }
 
         protected void Session_End(object sender, EventArgs e)
         {
-            //LogManager.GetLogger(typeof(Global)).Info("dadafdsasdasdf end");
         }
 
         protected void Application_End(object sender, EventArgs e)
         {
-            LogManager.GetLogger(typeof(Global)).Info("dadafdsasdasdf");
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Owen.Site.Services
         public AppHost()
             : base("Owen.Site.API", typeof(AppHost).Assembly)
         {
-            LogManager.LogFactory = new FileLogFactory();
+            
         }
 
         public override void Configure(Funq.Container container)

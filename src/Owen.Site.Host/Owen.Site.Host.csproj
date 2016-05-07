@@ -73,7 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -92,6 +94,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Owen.Site.Core\Owen.Site.Core.csproj">
+      <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
+      <Name>Owen.Site.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Owen.Site.Services\Owen.Site.Services.csproj">
       <Project>{3157ed46-1955-406f-b4ff-8f9b4e44a947}</Project>
       <Name>Owen.Site.Services</Name>

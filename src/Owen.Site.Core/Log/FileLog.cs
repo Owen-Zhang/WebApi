@@ -20,30 +20,24 @@ namespace Owen.Site.Core.Log
         
         public void Debug(object message, System.Exception exception)
         {
-            logger.Debug(
-                string.Format("message: {0}, exception:", 
-                    message, 
-                    ServiceStack.Text.JsonSerializer.SerializeToString(exception))
-                );
+
         }
 
         public void Debug(object message)
         {
-            logger.Debug(message);
+            //logger.Debug(message);
         }
 
         public void DebugFormat(string format, params object[] args)
         {
-            logger.Debug(format, args);
+            //logger.Debug(format, args);
         }
 
         public void Error(object message, System.Exception exception)
         {
             logger.Error(
-                string.Format("message: {0}, exception:",
-                    message,
-                    ServiceStack.Text.JsonSerializer.SerializeToString(exception))
-                );
+                message.ToString(),
+                ServiceStack.Text.JsonSerializer.SerializeToString(exception));
         }
 
         public void Error(object message)
@@ -59,10 +53,8 @@ namespace Owen.Site.Core.Log
         public void Fatal(object message, System.Exception exception)
         {
             logger.Fatal(
-                string.Format("message: {0}, exception:",
-                    message,
-                    ServiceStack.Text.JsonSerializer.SerializeToString(exception))
-                );
+                message.ToString(),
+                ServiceStack.Text.JsonSerializer.SerializeToString(exception));
         }
 
         public void Fatal(object message)
@@ -88,10 +80,8 @@ namespace Owen.Site.Core.Log
         public void Info(object message, System.Exception exception)
         {
             logger.Info(
-                string.Format("message: {0}, exception:",
-                    message,
-                    ServiceStack.Text.JsonSerializer.SerializeToString(exception))
-                );
+                message.ToString(),
+                ServiceStack.Text.JsonSerializer.SerializeToString(exception));
         }
 
         public bool IsDebugEnabled { get; set; }
@@ -99,10 +89,8 @@ namespace Owen.Site.Core.Log
         public void Warn(object message, System.Exception exception)
         {
             logger.Warn(
-                string.Format("message: {0}, exception:",
-                    message,
-                    ServiceStack.Text.JsonSerializer.SerializeToString(exception))
-                );
+                message.ToString(),
+                ServiceStack.Text.JsonSerializer.SerializeToString(exception));
         }
 
         public void Warn(object message)
