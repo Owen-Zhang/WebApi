@@ -4,8 +4,8 @@ using ServiceStack;
 namespace Owen.Site.Services.Map
 {
     [Route("/maplist", "GET")]
-    public class ListMapInfoServiceRequest : IReturn<MapInfo>
+    [Route("/map", "POST")]
+    public class ListMapInfoServiceRequest : MapInfo
     {
-
     }
 }

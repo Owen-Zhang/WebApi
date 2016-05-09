@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
+using Owen.Site.Core.Log;
 using Owen.Site.Model;
-using ServiceStack;
+using Owen.Site.Services.Common;
 
 namespace Owen.Site.Services.Map
 {
-    public class ListMapInfoService : Service
+    public class ListMapInfoService : BaseService<ListMapInfoServiceRequest>
     {
-        public object Get(ListMapInfoServiceRequest req)
+        public override object OnGet(ListMapInfoServiceRequest req)
         {
             return new List<MapInfo> { 
                 new MapInfo {
@@ -19,6 +20,16 @@ namespace Owen.Site.Services.Map
                      XPoint = "23.856",
                      YPoint = "106.145"
                 }
+            };
+        }
+
+        public override object OnPost(ListMapInfoServiceRequest req)
+        {
+            return new
+            {
+                Address = req.Address,
+                XPoint = req.XPoint,
+                YPoint = req.YPoint
             };
         }
     }
