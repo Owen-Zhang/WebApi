@@ -8,6 +8,7 @@ using Owen.Site.Core.Log;
 using ServiceStack;
 using ServiceStack.Logging;
 using ServiceStack.Web;
+using ServiceStack.Validation;
 
 namespace Owen.Site.Services
 {
@@ -22,6 +23,9 @@ namespace Owen.Site.Services
         public override void Configure(Funq.Container container)
         {
             GlobalRequestFilters.Add(AuthenticationValid);
+            GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
+
+            //container.RegisterValidators(typeof(AutoValidationValidator).Assembly);
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)
