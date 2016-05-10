@@ -35,9 +35,7 @@ namespace Owen.Site.Core.Log
 
         public void Error(object message, System.Exception exception)
         {
-            logger.Error(
-                message.ToString(),
-                ServiceStack.Text.JsonSerializer.SerializeToString(exception));
+            logger.Error(string.Format("{0} \r\nStackTrace : {1}", message, exception.StackTrace));
         }
 
         public void Error(object message)
