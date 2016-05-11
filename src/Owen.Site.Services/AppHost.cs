@@ -22,10 +22,10 @@ namespace Owen.Site.Services
 
         public override void Configure(Funq.Container container)
         {
-            GlobalRequestFilters.Add(AuthenticationValid);
+            //GlobalRequestFilters.Add(AuthenticationValid);
             GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
 
-            //container.RegisterValidators(typeof(AutoValidationValidator).Assembly);
+            container.RegisterValidators(typeof(AppHost).Assembly);
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)
