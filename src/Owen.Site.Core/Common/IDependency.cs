@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Owen.Site.Data.Service
+namespace Owen.Site.Core.Common
 {
-    public class Class1
+    public interface IDependency
     {
     }
 }

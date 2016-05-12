@@ -2,11 +2,18 @@
 using Owen.Site.Core.Log;
 using Owen.Site.Model;
 using Owen.Site.Services.Common;
+using Owen.Site.Main.Service;
 
 namespace Owen.Site.Services.Map
 {
     public class ListMapInfoService : BaseService<ListMapInfoServiceRequest>
     {
+        MapDomainService doMainService;
+        public ListMapInfoService(MapDomainService doMainService)
+        {
+            this.doMainService = doMainService;
+        }
+
         public override object OnGet(ListMapInfoServiceRequest req)
         {
             return new List<MapInfo> { 

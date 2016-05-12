@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Owen.Site.Core.Common;
+using Owen.Site.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Owen.Site.Main.Service
 {
-    public class Class1
+    public interface MapDomainService : IDependency
     {
+        MapInfo GetMapList();
     }
 }
