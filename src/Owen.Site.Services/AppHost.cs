@@ -23,9 +23,9 @@ namespace Owen.Site.Services
         public override void Configure(Funq.Container container)
         {
             //GlobalRequestFilters.Add(AuthenticationValid);
-            GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
 
-            container.RegisterValidators(typeof(AppHost).Assembly);
+            //GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
+            //container.RegisterValidators(typeof(AppHost).Assembly);
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)

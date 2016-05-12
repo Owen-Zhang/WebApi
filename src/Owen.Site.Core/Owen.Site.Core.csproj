@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="NLog">
       <HintPath>..\packages\NLog.4.4.0-beta5\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -68,7 +71,9 @@
     <Compile Include="Auth\Authentication.cs" />
     <Compile Include="Auth\IAuthentication.cs" />
     <Compile Include="Common\AppContext.cs" />
+    <Compile Include="Common\AutofacManager.cs" />
     <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\IDependency.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\FileLogFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

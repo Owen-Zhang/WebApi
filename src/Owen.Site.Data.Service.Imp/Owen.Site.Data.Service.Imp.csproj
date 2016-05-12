@@ -39,8 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MapDataServiceImp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Owen.Site.Core\Owen.Site.Core.csproj">
+      <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
+      <Name>Owen.Site.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Data.Service\Owen.Site.Data.Service.csproj">
+      <Project>{127284eb-265b-4041-8244-9c520a1ffaf8}</Project>
+      <Name>Owen.Site.Data.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Model\Owen.Site.Model.csproj">
+      <Project>{e8b94903-deb7-406d-9461-3993372d20e3}</Project>
+      <Name>Owen.Site.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
