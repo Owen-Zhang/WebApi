@@ -74,6 +74,7 @@
     <Compile Include="Common\AutofacManager.cs" />
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\IDependency.cs" />
+    <Compile Include="Common\ServiceProvider.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\FileLogFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

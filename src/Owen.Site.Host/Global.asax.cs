@@ -6,6 +6,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using Owen.Site.Core.Log;
 using ServiceStack.Logging;
+using Owen.Site.Core.Common;
 
 namespace Owen.Site.Host
 {
@@ -13,8 +14,9 @@ namespace Owen.Site.Host
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-            LogManager.LogFactory = new FileLogFactory();
+            LogManager.LogFactory = new FileLogFactory(); 
             new Owen.Site.Services.AppHost().Init();
+            AutofacManager.Current.Init();
         }
 
         protected void Session_Start(object sender, EventArgs e)
