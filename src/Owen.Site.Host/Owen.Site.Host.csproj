@@ -100,6 +100,22 @@
       <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
       <Name>Owen.Site.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Data.Service.Imp\Owen.Site.Data.Service.Imp.csproj">
+      <Project>{0d71c7f2-39ac-4b85-a3cf-4730a45c1912}</Project>
+      <Name>Owen.Site.Data.Service.Imp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Data.Service\Owen.Site.Data.Service.csproj">
+      <Project>{127284eb-265b-4041-8244-9c520a1ffaf8}</Project>
+      <Name>Owen.Site.Data.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Main.Service.Imp\Owen.Site.Main.Service.Imp.csproj">
+      <Project>{440ddfff-da11-4f1c-99f6-10f07b0a290f}</Project>
+      <Name>Owen.Site.Main.Service.Imp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Main.Service\Owen.Site.Main.Service.csproj">
+      <Project>{7db72577-c893-4af8-a498-7310cdbe4891}</Project>
+      <Name>Owen.Site.Main.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Owen.Site.Services\Owen.Site.Services.csproj">
       <Project>{3157ed46-1955-406f-b4ff-8f9b4e44a947}</Project>
       <Name>Owen.Site.Services</Name>
