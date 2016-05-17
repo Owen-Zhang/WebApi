@@ -7,5 +7,6 @@ namespace Owen.Site.Services.Map
     [Route("/map", "POST")]
     public class ListMapInfoServiceRequest : MapInfo
     {
+        public string test { get; set; }
     }
 }
