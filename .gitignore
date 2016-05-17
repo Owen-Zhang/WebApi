@@ -98,9 +98,9 @@ AppPackages/
 UserData
 
 src/packages
-src/Owen.WebSite.Host/Temp/*
-!src/Owen.WebSite.Host/Temp
-src/Owen.WebSite.Host/logs
+src/NE.MPS.Service.Host/Temp/*
+!src/NE.MPS.Service.Host/Temp
+src/NE.MPS.Service.Host/logs
 
 
 TestResults

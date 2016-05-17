@@ -62,6 +62,7 @@
       <DependentUpon>ListMapInfoService.cs</DependentUpon>
     </Compile>
     <Compile Include="Map\ListMapInfoValidator.cs" />
+    <Compile Include="Map\Requst\MapInfoReq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
