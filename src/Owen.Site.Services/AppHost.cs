@@ -24,8 +24,8 @@ namespace Owen.Site.Services
         {
             //GlobalRequestFilters.Add(AuthenticationValid);
 
-            //GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
-            //container.RegisterValidators(typeof(AppHost).Assembly);
+            GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
+            container.RegisterValidators(typeof(AppHost).Assembly);
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)

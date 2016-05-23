@@ -1,9 +1,4 @@
 ﻿using ServiceStack.FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Owen.Site.Services.Map
 {
@@ -11,7 +6,9 @@ namespace Owen.Site.Services.Map
     {
         public ListMapInfoValidator()
         {
-            RuleFor(item => item.Address).NotEmpty().WithMessage("please input Address info");
+            CascadeMode = CascadeMode.StopOnFirstFailure;
+
+            RuleFor(item => item.Address).NotEmpty();
         }
     }
 }
