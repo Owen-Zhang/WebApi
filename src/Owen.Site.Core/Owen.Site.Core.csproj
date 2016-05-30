@@ -72,8 +72,10 @@
     <Compile Include="Auth\IAuthentication.cs" />
     <Compile Include="Common\AppContext.cs" />
     <Compile Include="Common\AutofacManager.cs" />
+    <Compile Include="Common\BussinessException.cs" />
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\IDependency.cs" />
+    <Compile Include="Common\InterfaceAdapter.cs" />
     <Compile Include="Common\ServiceProvider.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\FileLogFactory.cs" />

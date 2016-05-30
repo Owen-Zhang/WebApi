@@ -1,7 +1,8 @@
-﻿using Owen.Site.Model;
+﻿using Autofac;
+using ServiceStack;
+using Owen.Site.Model;
 using Owen.Site.Services.Common;
 using Owen.Site.Main.Service;
-using Autofac;
 using Owen.Site.Core.Common;
 using Owen.Site.Services.Map.Requst;
 
@@ -11,12 +12,13 @@ namespace Owen.Site.Services.Map
     {
         public object Get(ListMapInfoServiceRequest request)
         {
-            return
-            AutofacManager.Current.Container.Resolve<MapDomainService>().GetMapList();
+            return AutofacManager.GetService<MapDomainService>().GetMapList();
+            //return AutofacManager.Current.Container.Resolve<MapDomainService>().GetMapList();
         }
 
         public object Post(ListMapInfoServiceRequest req)
         {
+            //throw new BussinessException("adasdfsdf: {0}".Fmt(req.Address));
             return new
             {
                 Address = req.Address,

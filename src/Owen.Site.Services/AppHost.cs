@@ -9,6 +9,7 @@ using ServiceStack;
 using ServiceStack.Logging;
 using ServiceStack.Web;
 using ServiceStack.Validation;
+using Owen.Site.Core.Common;
 
 namespace Owen.Site.Services
 {
@@ -24,8 +25,9 @@ namespace Owen.Site.Services
         {
             //GlobalRequestFilters.Add(AuthenticationValid);
 
-            GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
-            container.RegisterValidators(typeof(AppHost).Assembly);
+            //GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
+            //container.RegisterValidators(typeof(AppHost).Assembly);
+            //container.Adapter = new InterfaceAdapter();
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)

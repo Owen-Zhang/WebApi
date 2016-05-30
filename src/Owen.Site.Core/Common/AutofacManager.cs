@@ -25,6 +25,11 @@ namespace Owen.Site.Core.Common
             }
         }
 
+        public static T GetService<T>()
+        {
+            return Current.Container.Resolve<T>();
+        }
+
         public IContainer Container
         {
             get

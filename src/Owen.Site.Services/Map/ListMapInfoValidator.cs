@@ -7,8 +7,8 @@ namespace Owen.Site.Services.Map
         public ListMapInfoValidator()
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
-
-            RuleFor(item => item.Address).NotEmpty();
+            RuleFor(item => item.Address).NotEmpty().WithErrorCode("ShouldNotBeEmpty");
+            RuleFor(item => item.test).NotEmpty().WithErrorCode("ShouldNotBeEmpty"); 
         }
     }
 }
