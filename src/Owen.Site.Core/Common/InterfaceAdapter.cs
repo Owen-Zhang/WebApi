@@ -8,7 +8,11 @@ namespace Owen.Site.Core.Common
     {
         public T TryResolve<T>()
         {
-            return AutofacManager.Current.Container.Resolve<T>();
+            T result;
+            if (!AutofacManager.Current.Container.TryResolve<T>(out result))
+                result = default(T);
+
+            return result;
         }
 
         public T Resolve<T>()

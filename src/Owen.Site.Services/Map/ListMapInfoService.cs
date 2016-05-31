@@ -10,9 +10,11 @@ namespace Owen.Site.Services.Map
 {
     public class ListMapInfoService : ServiceStack.Service
     {
+        public MapDomainService mapService { get; set; }
         public object Get(ListMapInfoServiceRequest request)
         {
-            return AutofacManager.GetService<MapDomainService>().GetMapList();
+            return mapService.GetMapList();
+            //return AutofacManager.GetService<MapDomainService>().GetMapList();
             //return AutofacManager.Current.Container.Resolve<MapDomainService>().GetMapList();
         }
 
