@@ -27,7 +27,16 @@ namespace Owen.Site.Services
 
             //GlobalRequestFilters.Add(ValidationFilters.RequestFilter);
             //container.RegisterValidators(typeof(AppHost).Assembly);
+            //Routes.Add<Hello>("/hello", "GET").Add<Hello>("/hello/{Name}", "POST");
             container.Adapter = new InterfaceAdapter();
+
+            SetConfig(new HostConfig { 
+                EnableFeatures = Feature.All.Remove(
+                    Feature.Metadata | Feature.Soap | Feature.Soap11 | Feature.Soap12 | 
+                    Feature.Razor | Feature.Csv | Feature.Jsv | Feature.ServiceDiscovery |
+                    Feature.Markdown
+                )
+            });
         }
 
         private void AuthenticationValid(IRequest req, IResponse res, object reqDto)
