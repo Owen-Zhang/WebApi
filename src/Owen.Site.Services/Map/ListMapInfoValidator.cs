@@ -1,8 +1,9 @@
-﻿using ServiceStack.FluentValidation;
+﻿using Owen.Site.Services.Common;
+using ServiceStack.FluentValidation;
 
 namespace Owen.Site.Services.Map
 {
-    public class ListMapInfoValidator : AbstractValidator<ListMapInfoServiceRequest>
+    public class ListMapInfoValidator : ValidatorBase<ListMapInfoServiceRequest>
     {
         public ListMapInfoValidator()
         {
