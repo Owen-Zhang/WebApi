@@ -79,6 +79,7 @@
     <Compile Include="Common\ServiceProvider.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\FileLogFactory.cs" />
+    <Compile Include="Log\LoggerManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

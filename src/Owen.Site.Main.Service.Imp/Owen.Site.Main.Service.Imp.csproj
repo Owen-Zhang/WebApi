@@ -59,6 +59,10 @@
       <Project>{e8b94903-deb7-406d-9461-3993372d20e3}</Project>
       <Name>Owen.Site.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Resouce\Owen.Site.Resouce.csproj">
+      <Project>{f8fb620d-e55f-4a0e-9a16-aa3fefcc8236}</Project>
+      <Name>Owen.Site.Resouce</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

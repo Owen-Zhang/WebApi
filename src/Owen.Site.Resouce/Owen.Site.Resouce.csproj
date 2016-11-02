@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D71C7F2-39AC-4B85-A3CF-4730A45C1912}</ProjectGuid>
+    <ProjectGuid>{F8FB620D-E55F-4A0E-9A16-AA3FEFCC8236}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Owen.Site.Data.Service.Imp</RootNamespace>
-    <AssemblyName>Owen.Site.Data.Service.Imp</AssemblyName>
+    <RootNamespace>Owen.Site.Resouce</RootNamespace>
+    <AssemblyName>Owen.Site.Resouce</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,26 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapDataServiceImp.cs" />
+    <Compile Include="BusinessError.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BusinessError.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Owen.Site.Core\Owen.Site.Core.csproj">
-      <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
-      <Name>Owen.Site.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Owen.Site.Data.Service\Owen.Site.Data.Service.csproj">
-      <Project>{127284eb-265b-4041-8244-9c520a1ffaf8}</Project>
-      <Name>Owen.Site.Data.Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Owen.Site.Model\Owen.Site.Model.csproj">
-      <Project>{e8b94903-deb7-406d-9461-3993372d20e3}</Project>
-      <Name>Owen.Site.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Owen.Site.Resouce\Owen.Site.Resouce.csproj">
-      <Project>{f8fb620d-e55f-4a0e-9a16-aa3fefcc8236}</Project>
-      <Name>Owen.Site.Resouce</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="BusinessError.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BusinessError.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
