@@ -88,6 +88,7 @@
     <Content Include="NLog.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Properties\PublishProfiles\webAPI.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

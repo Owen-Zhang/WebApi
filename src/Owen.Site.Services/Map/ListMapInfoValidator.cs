@@ -1,17 +1,15 @@
-﻿using ServiceStack.FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Owen.Site.Services.Common;
+using ServiceStack.FluentValidation;
 
 namespace Owen.Site.Services.Map
 {
-    public class ListMapInfoValidator : AbstractValidator<ListMapInfoServiceRequest>
+    public class ListMapInfoValidator : ValidatorBase<ListMapInfoServiceRequest>
     {
         public ListMapInfoValidator()
         {
-            RuleFor(item => item.Address).NotEmpty().WithMessage("please input Address info");
+            CascadeMode = CascadeMode.StopOnFirstFailure;
+            RuleFor(item => item.Address).NotEmpty().WithErrorCode("ShouldNotBeEmpty");
+            RuleFor(item => item.test).NotEmpty().WithErrorCode("ShouldNotBeEmpty"); 
         }
     }
 }

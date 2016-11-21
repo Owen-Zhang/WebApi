@@ -1,4 +1,6 @@
-﻿using Owen.Site.Data.Service;
+﻿using Owen.Site.Core.Log;
+using Owen.Site.Data.Service;
+using Owen.Site.Resouce;
 
 namespace Owen.Site.Main.Service.Imp
 {
@@ -13,6 +15,7 @@ namespace Owen.Site.Main.Service.Imp
 
         public Model.MapInfo GetMapList()
         {
+            LoggerManager.Info(BusinessError._002);
             return mapDataService.GetMapList();
         }
     }

@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.3.2.1\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,9 +41,13 @@
   <ItemGroup>
     <Compile Include="MapService.Tester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolrService.Tester.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Owen.Site.Data.Service.Imp\Owen.Site.Data.Service.Imp.csproj">
+      <Project>{0d71c7f2-39ac-4b85-a3cf-4730a45c1912}</Project>
+      <Name>Owen.Site.Data.Service.Imp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
