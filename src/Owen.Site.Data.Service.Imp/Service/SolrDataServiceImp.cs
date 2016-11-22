@@ -1,5 +1,6 @@
 ﻿using Microsoft.Practices.ServiceLocation;
 using SolrNet;
+using System;
 namespace Owen.Site.Data.Service.Imp
 {
     public class SolrDataServiceImp : SolrDataService
@@ -9,15 +10,36 @@ namespace Owen.Site.Data.Service.Imp
             Startup.Init<SolrOrder>("http://localhost:8080/solr/Order2");
 
             ISolrOperations<SolrOrder> solr = ServiceLocator.Current.GetInstance<ISolrOperations<SolrOrder>>();
-            var order = new SolrOrder { 
+
+            AbstractSolrQuery solrQuery = new SolrQuery("*:*");
+            //solrQuery = solrQuery && new SolrQuery(string.Format("name:{0}", "test1"));
+            solrQuery = solrQuery && new SolrQuery(string.Format("name:({0} or {1})", "test1", "test6"));
+            var result = solr.Query(solrQuery);
+            
+            return null;
+        }
+
+        public bool SaveOrderToSolr()
+        {
+            Startup.Init<SolrOrder>("http://localhost:8080/solr/Order2");
+
+            ISolrOperations<SolrOrder> solr = ServiceLocator.Current.GetInstance<ISolrOperations<SolrOrder>>();
+            var order = new SolrOrder
+            {
                 Id = "123459",
                 Name = "test9",
                 Price = 45.26m
             };
-            solr.Add(order);
-            solr.Commit();
-
-            return null;
+            try
+            {
+                solr.Add(order);
+                solr.Commit();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return true;
         }
     }
 }

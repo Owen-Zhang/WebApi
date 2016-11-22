@@ -21,7 +21,7 @@ namespace Owen.Site.Data.Imp.Tester
         {
             int i = 10 + 2;
 
-            Assert.AreEqual(i, 1);
+            Assert.AreEqual(i, 12);
         }
     }
 }
