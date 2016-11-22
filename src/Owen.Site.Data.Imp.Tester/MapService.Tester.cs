@@ -18,8 +18,10 @@ namespace Owen.Site.Data.Imp.Tester
 
         [Test]
         public void ShowMapService()
-        { 
-        
+        {
+            int i = 10 + 2;
+
+            Assert.AreEqual(i, 1);
         }
     }
 }

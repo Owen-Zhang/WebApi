@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,10 +48,21 @@
     <Compile Include="SolrService.Tester.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Owen.Site.Core\Owen.Site.Core.csproj">
+      <Project>{a91e66de-0f3c-4868-ade4-c32fc4552386}</Project>
+      <Name>Owen.Site.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Owen.Site.Data.Service.Imp\Owen.Site.Data.Service.Imp.csproj">
       <Project>{0d71c7f2-39ac-4b85-a3cf-4730a45c1912}</Project>
       <Name>Owen.Site.Data.Service.Imp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Data.Service\Owen.Site.Data.Service.csproj">
+      <Project>{127284eb-265b-4041-8244-9c520a1ffaf8}</Project>
+      <Name>Owen.Site.Data.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
