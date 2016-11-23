@@ -12,6 +12,8 @@ namespace Owen.Site.Services.Map
         public MapDomainService mapService { get; set; }
         public object Get(ListMapInfoServiceRequest request)
         {
+            throw new System.Exception("Exception");
+
             return mapService.GetMapList();
             //return AutofacManager.GetService<MapDomainService>().GetMapList();
         }
