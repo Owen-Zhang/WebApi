@@ -3,7 +3,7 @@ using Owen.Site.Model;
 
 namespace Owen.Site.Data.Service
 {
-    public interface MapDataService : IDependency
+    public interface IMapDataService : IDependency
     {
         MapInfo GetMapList();
     }

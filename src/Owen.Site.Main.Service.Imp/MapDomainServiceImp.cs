@@ -6,9 +6,9 @@ namespace Owen.Site.Main.Service.Imp
 {
     public class MapDomainServiceImp : MapDomainService
     {
-        MapDataService mapDataService;
+        IMapDataService mapDataService;
 
-        public MapDomainServiceImp(MapDataService mapDataService)
+        public MapDomainServiceImp(IMapDataService mapDataService)
         {
             this.mapDataService = mapDataService;
         }

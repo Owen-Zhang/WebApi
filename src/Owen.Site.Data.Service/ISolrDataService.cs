@@ -2,7 +2,7 @@
 
 namespace Owen.Site.Data.Service
 {
-    public interface SolrDataService : IDependency
+    public interface ISolrDataService : IDependency
     {
         object GetOrderByCondition();
         bool SaveOrderToSolr();

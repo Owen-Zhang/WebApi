@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Owen.Site.Data.Service.Imp
 {
-    public class MapDataServiceImp : MapDataService
+    public class MapDataServiceImp : IMapDataService
     {
         public Model.MapInfo GetMapList()
         {
