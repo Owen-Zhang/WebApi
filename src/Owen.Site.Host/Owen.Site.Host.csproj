@@ -41,7 +41,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataAccess-Dapper.1.0.4\lib\DataAccess.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ServiceStack">
       <HintPath>..\packages\ServiceStack.4.0.56\lib\net40\ServiceStack.dll</HintPath>
     </Reference>
@@ -54,8 +62,9 @@
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\packages\ServiceStack.Interfaces.4.0.56\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text">
-      <HintPath>..\packages\ServiceStack.Text.4.0.56\lib\net40\ServiceStack.Text.dll</HintPath>
+    <Reference Include="ServiceStack.Text, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.5.0\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
