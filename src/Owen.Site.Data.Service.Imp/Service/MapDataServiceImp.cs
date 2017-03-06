@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccess;
+using Owen.Site.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +18,12 @@ namespace Owen.Site.Data.Service.Imp
                 XPoint = "23.2356",
                 YPoint = "106.4586"
             };
+        }
+
+        public List<JobSchedulerInfo> GetJobSchedulerInfoList()
+        {
+            var command = DbManager.GetDataCommand("GetMySqlSechedulerInfo");
+            return command.QueryList<JobSchedulerInfo>();
         }
     }
 }

@@ -85,18 +85,25 @@
     <Compile Include="Common\AppContext.cs" />
     <Compile Include="Common\AutofacManager.cs" />
     <Compile Include="Common\BussinessException.cs" />
+    <Compile Include="Common\ConfigurationService.cs" />
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\IDependency.cs" />
     <Compile Include="Common\InterfaceAdapter.cs" />
     <Compile Include="Common\ServiceProvider.cs" />
+    <Compile Include="Http\Constr.cs" />
+    <Compile Include="Http\HttpClient.cs" />
+    <Compile Include="Http\RestRequst.cs" />
+    <Compile Include="Http\SerializeManager.cs" />
     <Compile Include="Log\FileLog.cs" />
     <Compile Include="Log\FileLogFactory.cs" />
     <Compile Include="Log\LoggerManager.cs" />
+    <Compile Include="Model\PageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Owen.Site.Data.Service.Imp;
+using Owen.Site.Reference.Service.Imp.Solr;
 
 namespace Owen.Site.Data.Imp.Tester
 {
@@ -14,9 +14,12 @@ namespace Owen.Site.Data.Imp.Tester
         }*/
 
         [Test]
-        public void AddOrderToSolr()
+        public void GetSomethingFromSolr()
         {
-            new SolrDataServiceImp().GetOrderByCondition();
+            new ScheduleReferenceImp().GetScheduleInfo(new Owen.Site.Model.ScheduleQuery
+            {
+                IdList = new System.Collections.Generic.List<int> { 1, 2, 930, 1042, 1041 }
+            });
         }
     }
 }

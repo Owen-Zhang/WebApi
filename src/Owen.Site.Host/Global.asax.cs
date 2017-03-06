@@ -7,6 +7,7 @@ using System.Web.SessionState;
 using Owen.Site.Core.Log;
 using ServiceStack.Logging;
 using Owen.Site.Core.Common;
+using DataAccess;
 
 namespace Owen.Site.Host
 {
@@ -17,6 +18,7 @@ namespace Owen.Site.Host
             LogManager.LogFactory = new FileLogFactory(); 
             new Owen.Site.Services.AppHost().Init();
             AutofacManager.Current.Init();
+            DbManager.LoadDataAccessConfig();
         }
 
         protected void Session_Start(object sender, EventArgs e)
@@ -30,11 +32,12 @@ namespace Owen.Site.Host
 
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
+            LoggerManager.ErrorFormat("error in application");
         }
 
         protected void Session_End(object sender, EventArgs e)

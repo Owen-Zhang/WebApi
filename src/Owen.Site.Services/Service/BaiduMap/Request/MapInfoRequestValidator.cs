@@ -1,11 +1,11 @@
 ﻿using Owen.Site.Services.Common;
 using ServiceStack.FluentValidation;
 
-namespace Owen.Site.Services.Map
+namespace Owen.Site.Services.BaiduMap
 {
-    public class ListMapInfoValidator : ValidatorBase<ListMapInfoServiceRequest>
+    public class MapInfoValidator : ValidatorBase<MapInfoServiceRequest>
     {
-        public ListMapInfoValidator()
+        public MapInfoValidator()
         {
             CascadeMode = CascadeMode.StopOnFirstFailure;
             RuleFor(item => item.Address).NotEmpty().WithErrorCode("ShouldNotBeEmpty");

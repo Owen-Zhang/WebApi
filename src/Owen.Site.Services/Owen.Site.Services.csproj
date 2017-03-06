@@ -66,13 +66,13 @@
   <ItemGroup>
     <Compile Include="AppHost.cs" />
     <Compile Include="Common\ValidatorBase.cs" />
-    <Compile Include="Map\ListMapInfoService.cs" />
-    <Compile Include="Map\ListMapInfoServiceRequest.cs">
-      <DependentUpon>ListMapInfoService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Map\ListMapInfoValidator.cs" />
-    <Compile Include="Map\Requst\MapInfoReq.cs" />
+    <Compile Include="Service\BaiduMap\BaiduMapService.cs" />
+    <Compile Include="Service\BaiduMap\Request\JobSheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BaiduMap\Request\MapInfoServiceRequest.cs" />
+    <Compile Include="Service\BaiduMap\Request\MapInfoRequestValidator.cs">
+      <DependentUpon>MapInfoServiceRequest.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Owen.Site.Main.Service
 {
-    public interface MapDomainService : IDependency
+    public interface IMapDomainService : IDependency
     {
         MapInfo GetMapList();
+        List<JobSchedulerInfo> GetJobSchedulerInfoList();
     }
 }

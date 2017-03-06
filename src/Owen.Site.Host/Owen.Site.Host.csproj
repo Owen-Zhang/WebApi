@@ -62,10 +62,6 @@
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\packages\ServiceStack.Interfaces.4.0.56\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.Text, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ServiceStack.Text.4.5.0\lib\net45\ServiceStack.Text.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -95,7 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="NLog.config">
       <SubType>Designer</SubType>
     </Content>
@@ -127,6 +125,14 @@
     <ProjectReference Include="..\Owen.Site.Main.Service\Owen.Site.Main.Service.csproj">
       <Project>{7db72577-c893-4af8-a498-7310cdbe4891}</Project>
       <Name>Owen.Site.Main.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Reference.Service.Imp\Owen.Site.Reference.Service.Imp.csproj">
+      <Project>{821d430b-e960-4d1a-a48c-a7b3b72f0891}</Project>
+      <Name>Owen.Site.Reference.Service.Imp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Owen.Site.Reference.Service\Owen.Site.Reference.Service.csproj">
+      <Project>{a9859042-ba26-4b7c-a89a-0a077cbb7a7c}</Project>
+      <Name>Owen.Site.Reference.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Owen.Site.Services\Owen.Site.Services.csproj">
       <Project>{3157ed46-1955-406f-b4ff-8f9b4e44a947}</Project>

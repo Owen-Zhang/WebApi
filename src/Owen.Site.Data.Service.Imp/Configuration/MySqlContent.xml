@@ -3,14 +3,13 @@
     <Command Name="GetMySqlSechedulerInfo" DataBase="TestMySql" CommandType="Text">
       <CommandText>
         <![CDATA[
-        select 
-          ID as Id, 
-          START_TIME as StartTime, 
-          END_TIME as EndTime, 
-          EXIT_CODE as ExitCode, 
-          PID as  Pid,
-          LOG as Log
-        from scheduler_history LIMIT 1000
+        select
+          ID as Id,
+          START_TIME as StartTime,
+          END_TIME as EndTime,
+          EXIT_CODE as ExitCode,
+          PID as  Pid
+        from scheduler_history order by id desc limit 100
       ]]>
       </CommandText>
     </Command>

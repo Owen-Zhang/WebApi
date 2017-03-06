@@ -46,6 +46,8 @@ namespace Owen.Site.Core.Common
                 "Owen.Site.Data.Service.dll",
                 "Owen.Site.Data.Service.Imp.dll",
                 "Owen.Site.Main.Service.dll",
+                "Owen.Site.Main.Service.Imp.dll",
+                "Owen.Site.Main.Service.dll",
                 "Owen.Site.Main.Service.Imp.dll"
             };
 
