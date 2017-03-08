@@ -1,21 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Owen.Site.Reference.Service.Imp.ReferenceModel
 {
-    public class ScheduleResponse
-    {
-        public ResponseDetail response { get; set; }
-    }
-
-    public class ResponseDetail
-    {
-        public int numFound { get; set; }
-
-        public int start { get; set; }
-
-        public List<ReferenceScheduleInfo> docs { get; set; }
-    }
-
     public class ReferenceScheduleInfo
     {
         public int Id { get; set; }

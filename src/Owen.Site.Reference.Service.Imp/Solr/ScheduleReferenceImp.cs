@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Linq;
 using Owen.Site.Model;
 using Owen.Site.Resouce;
 using Owen.Site.Core.Http;
@@ -12,11 +13,13 @@ namespace Owen.Site.Reference.Service.Imp.Solr
 {
     public class ScheduleReferenceImp : IScheduleReferenceService
     {
-        public List<ScheduleInfo> GetScheduleInfo(ScheduleQuery info)
+        /// <summary>
+        /// //string url = "http://localhost:8080/solr/JobScheduler/select";
+        /// </summary>
+        public Tuple<List<ScheduleInfo>,int> GetScheduleInfo(ScheduleQuery info)
         {
-            //string url = ConfigurationService.GetAppSetting<string>("ScheduleSorlUrl");
-            string url = "http://localhost:8080/solr/JobScheduler/select";
-
+            string url = ConfigurationService.GetAppSetting<string>("ScheduleSorlUrl");
+            
             if (string.IsNullOrEmpty(url))
                 throw new Exception("please config 'ScheduleSorlUrl' in AppSetting");
 
@@ -30,10 +33,18 @@ namespace Owen.Site.Reference.Service.Imp.Solr
                     {"Content-Type", ContentFormat.Json}
             });
 
-            var result = 
-                request.PostByStrService<ScheduleResponse>(requstUrl, "GET");
+            var result =
+                request.PostByStrService<SolrResponse<ReferenceScheduleInfo>>(requstUrl, "GET").response;
 
-            return null;
+            return  new Tuple<List<ScheduleInfo>,int>(result.docs.Select(
+                item => new ScheduleInfo(){
+                    Id = item.Id,
+                    StartTime = item.StartTime,
+                    EndTime = item.EndTime,
+                    ExitCode = item.ExitCode,
+                    Pid = item.Pid
+                }).ToList(), 
+                result.numFound);
         }
 
         private string ConstructSelectStr(ScheduleQuery info)
@@ -49,22 +60,22 @@ namespace Owen.Site.Reference.Service.Imp.Solr
 
             if (info.BeginStartTime.HasValue)
             {
-                resultStr.AppendFormat("+AND+StartTime:[\"{0}\"+TO+*]", info.BeginStartTime.Value.ToString(BusinessError.DataFormat_Solr));
+                resultStr.AppendFormat("+AND+StartTime:[{0}+TO+*]", info.BeginStartTime.Value.ToString(BusinessError.DataFormat_Solr));
             }
 
             if (info.EndStartTime.HasValue)
             {
-                resultStr.AppendFormat("+AND+StartTime:[*TO+\"{0}\"]", info.EndStartTime.Value.ToString(BusinessError.DataFormat_Solr));
+                resultStr.AppendFormat("+AND+StartTime:[*+TO+{0}]", info.EndStartTime.Value.ToString(BusinessError.DataFormat_Solr));
             }
 
             if (info.BeginOverTime.HasValue)
             {
-                resultStr.AppendFormat("+AND+EndTime:[\"{0}\"+TO+*]", info.BeginOverTime.Value.ToString(BusinessError.DataFormat_Solr));
+                resultStr.AppendFormat("+AND+EndTime:[{0}+TO+*]", info.BeginOverTime.Value.ToString(BusinessError.DataFormat_Solr));
             }
 
             if (info.EndOverTime.HasValue)
             {
-                resultStr.AppendFormat("+AND+EndTime:[\"{0}\"+TO+*]", info.EndOverTime.Value.ToString(BusinessError.DataFormat_Solr));
+                resultStr.AppendFormat("+AND+EndTime:[*+TO+{0}]", info.EndOverTime.Value.ToString(BusinessError.DataFormat_Solr));
             }
 
             resultStr.AppendFormat("&start={0}", (info.PageInfo.PageIndex - 1) * info.PageInfo.PageSize);
